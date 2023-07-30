@@ -101,7 +101,7 @@ function checkEndList(data) {
       )
       .join('');
   
-    refs.boxImg.insertAdjacentHTML('beforeend', markUp);
+    REFS.boxImg.insertAdjacentHTML('beforeend', markUp);
     showBtn();
   
     if (newApiService.page > 2) {
@@ -112,7 +112,7 @@ function checkEndList(data) {
   }
   
   function clearMarkup() {
-    refs.boxImg.innerHTML = '';
+    REFS.boxImg.innerHTML = '';
   }
   function scroll() {
     const { height: cardHeight } = document
@@ -140,15 +140,15 @@ function checkEndList(data) {
       { rootMargin: '400px' }
     );
   
-    observer.observe(refs.btn);
+    observer.observe(REFS.btn);
   }
   
   //About button
   function showBtn() {
-    refs.btn.classList.remove('is-hidden');
+    REFS.btn.classList.remove('is-hidden');
   }
   function hideBtn() {
-    refs.btn.classList.add('is-hidden');
+    REFS.btn.classList.add('is-hidden');
   }
   
   //SimpleLightbox
