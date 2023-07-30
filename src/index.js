@@ -5,7 +5,7 @@ import SimpleLightbox from 'simplelightbox';
 import NewApiService from './js/pixabay-api-service.js';
 
 const REFS = {
-    form: document.querySelector('.search-form'),
+    form: document.querySelector('#search-form'),
     boxImg: document.querySelector('.gallery'),
     btn: document.querySelector('.load-more'),
 };
@@ -15,10 +15,10 @@ hideBtn();
 REFS.form.addEventListener('submit', onSearch);
 REFS.btn.addEventListener('click', fetchImg);
 
-function onSearch(evt) {
-    evt.preventDefault();
+function onSearch(event) {
+    event.preventDefault();
 
-    newApiService.query = evt.currentTarget.elements.searchValue.value.trim();
+    newApiService.query = event.currentTarget.elements[0].value.trim();
     if (!newApiService.query) {
         Notiflix.Notify.failure('Please clarify your search');
         return;
